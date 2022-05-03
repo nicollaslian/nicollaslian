@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <title>Meu site legalzinho</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #pagina{
+            width: 50%;
+            height: 100%;
+            background-color: rgb(2, 204, 255);
+            margin: auto;
+        }
+
+        #imagem{
+            width:70%;
+            margin: 0 0 0 150px;
+            border-color: brown;
+            border-width:5px;
+            border-style:solid;
+            border-radius:50px;
+            cursor:pointer;
+            opacity: 1;
+
+        }
+
+        footer{
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding:3px;
+        }
+
+        footer a{
+            color:red;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        }
+    </style>
+
+</head>
+<body onload="autoOpacidade()">
+    
+    <h1>Cachorro nasce na disneylandia</h1>
+    <h4>ele é tao fofinho</h4>
+
+    <img src="http://images7.memedroid.com/images/UPLOADED693/5ba03f624218c.jpeg" alt="">
+
+
+    <div id="pagina"></div>
+
+    <script>
+        var pagina = document.getElementById('pagina');
+        var indImagem=1;
+        var opacidade=1;
+        var reduzir=true;
+        
+        pagina.innerHTML='<h2>Exemplo for</h2>';
+        for (i=1;i<5;i++){
+            pagina.innerHTML+='<h3>'+i+'</h3>';
+        }
+
+        pagina.innerHTML+='<h2>Exemplo do while</h2>';
+        var i=1;
+        do{
+            pagina.innerHTML+='<h3>'+i+'</h3>';
+            i++;
+        }while(i<5);
+
+        pagina.innerHTML+='<img  id="imagem" src="https://softgraf.com/img/img1.jpg" onclick="mudarOpacidade()"  />';
+
+        function trocarImagem(){
+            let imagem = document.getElementById('imagem');
+            indImagem++;
+            if (indImagem>7)
+                indImagem=1;
+            imagem.src="https://softgraf.com/img/img"  +indImagem+".jpg"
+        }
+
+        function mudarOpacidade(){
+            let imagem = document.getElementById('imagem');
+            if (reduzir)
+                opacidade-=0.1;
+            else
+                opacidade+=0.1;
+
+            if (opacidade<=0){
+                reduzir=false;
+                trocarImagem();
+            } else if(opacidade>=4)
+                reduzir=true;
+
+                imagem.style.opacity=opacidade;
+        }
+
+        function autoOpacidade(){
+            setInterval("mudarOpacidade()",40);
+        }
+    </script>
+
+    <hr>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quae id, delectus, totam blanditiis minima repellat, rem quam exercitationem dolorem aperiam velit cupiditate illo. Voluptates doloribus atque aut a vitae.
+    </p>
+
+    <label>Baixando arquivo - Trojan.exe</label>
+    <progress id="file" value="95"max="100"></progress>
+        <ol type="I">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+        <ul style="list-style-type: square;">
+            <li>Café</li>
+            <li>Leite</li>
+            <li>Chá</li>
+        </ul>
+        <hr>
+        <h2>Trailer Dr.Estranho 2</h2>
+        <h3>⭐⭐⭐⭐⭐</h3>
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WjnsXb3K9O8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <br>
+
+        <canvas id="meuCanvas"></canvas>
+
+        <script>
+            var canvas=document.getElementById("meuCanvas");
+            var ctx=canvas.getContext("2d");
+            ctx.fillStyle="black";
+            ctx.fillRect(20,50,150,100);
+
+        // Muda a transparência para 20%
+        ctx.globalAlpha=0.7;
+        ctx.fillStyle="grey";
+        ctx.fillRect(90,50,150,110);
+
+        ctx.globalAlpha=0.5;
+        ctx.fillStyle="green";
+        ctx.fillRect(250,50,150,120);
+        </script>
+
+        <footer>
+            <p><h1>Autor: Nicollas Lian</h1><br>
+                <a href="https://www.youtube.com/watch?v=iik25wqIuFo" target="_blank"><h2>Aprenda a ganhar 10.000 R$ por DIA</h2></a>
+
+
+
+            </p>
+        </footer>
+
+</body>
+</html>

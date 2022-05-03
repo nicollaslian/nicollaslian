@@ -1,0 +1,21 @@
+#Download GIT BASH Windows 64 bits
+#Instalar
+
+abrir o prompt do windows => CMD
+Navegar para o local => D:
+Cd Curso Python 'Seu_Nome'
+CD aula1
+dir
+
+
+#Comandos do Git
+git init
+
+git config --global user.name "Seu nome"
+git config --global user.email "seuemail@dominio.com.br
+
+git add .
+git commit -m "versão inicial"
+git branch -M aula1
+git remote add origin https://github.com/nicollaslian/python.git
+git push -u origin aula1
