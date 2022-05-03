@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastrar</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>{{titulo|title}}</h1>
+    </div>
+
+  <form action="{{url_for('salvar')}}" method="post">
+
+    <div class="form-group">
+      <label>Código</label>
+      <input type="text" name="id" class="form-control" readonly>
+    </div>
+    <br>
+
+      <div class="form-group">
+          <label>Descrição</label>
+          <input type="text" name="descricao" class="form-control" required>
+      </div>
+      <br>
+
+      <div class="form-group">
+          <label>Preço</label>
+          <input type="text" name="preco" class="form-control" required>
+      </div>
+      <br>
+
+      <div class="form-group">
+          <label>Quantidade</label>
+          <input type="text" name="quantidade" class="form-control" required>
+      </div>
+      <br>
+
+      <button type="submit" class="btn btn-primary" style="margin-right:25px">Salvar</button>
+      <a class="btn btn-danger" href="{{url_for('index')}}">Voltar</a>
+  </form>
+
+</div>
+
+
+</body>
+</html>
